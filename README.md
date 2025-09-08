@@ -1,2 +1,2 @@
-# BIManalyst group Structural grp 29
+# BIManalyst group g 29
 
