@@ -1,1 +1,1 @@
-# BIManalyst group xy
+# BIManalyst group Structural
