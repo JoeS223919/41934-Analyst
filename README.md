@@ -1,2 +1,2 @@
-# BIManalyst group g 29
+# BIManalyst group 29
 
