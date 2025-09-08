@@ -4,7 +4,7 @@ from rules import windowRule
 from rules import doorRule
 from rules import beamRule
 
-model = ifcopenshell.open("data/25-16-D-STR.ifc")
+model = ifcopenshell.open("samples/25-16-D-STR.ifc")
 
 windowResult = windowRule.checkRule(model)
 doorResult = doorRule.checkRule(model)
