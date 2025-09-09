@@ -13,5 +13,3 @@ beamResult = beamRule.checkRule(model)
 print("Window result:", windowResult)
 print("Door result:", doorResult)
 print("Beam result:", beamResult)
-
-print("hello")
