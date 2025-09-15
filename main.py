@@ -8,16 +8,12 @@ from rules import BeamClassifications
 
 model = ifcopenshell.open("samples/25-16-D-STR.ifc")
 
-windowResult = windowRule.checkRule(model)
-doorResult = doorRule.checkRule(model)
-beamResult = beamRule.checkRule(model)
-beamClassificationsResult = BeamClassifications.checkRule(model)
+# windowResult = windowRule.checkRule(model)
+# doorResult = doorRule.checkRule(model)
+# beamResult = beamRule.checkRule(model)
+beamClassificationsResult = BeamClassifications.checkRule(model, 1)
 
-print("Window result:", windowResult)
-print("Door result:", doorResult)
-print("Beam result:", beamResult)
+# print("Window result:", windowResult)
+# print("Door result:", doorResult)
+# print("Beam result:", beamResult)
 print("Beam classifications:", beamClassificationsResult)
-
-
-classifications = model.by_type("IfcClassification")
-print("Classifications:", classifications)

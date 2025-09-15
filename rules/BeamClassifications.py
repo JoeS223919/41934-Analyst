@@ -1,8 +1,9 @@
 import ifcopenshell
+import ifcopenshell.util.classification
 
-
-def checkRule(model):
-    element = ifcopenshell.util.element.get_element(model, "IfcBeam")
+def checkRule(model, Beamid):
+    
+    element = model.by_type('IfcBeam')[Beamid]
 
     references = ifcopenshell.util.classification.get_references(element)
     
