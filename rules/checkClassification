@@ -21,6 +21,6 @@ def checkRule(model):
 
 
 
-model = ifcopenshell.open("samples/25-06-D-STR.ifc")
-result = checkRule(model)
-print(result)
+# model = ifcopenshell.open("samples/Exercise9_Group10.ifc")
+# result = checkRule(model)
+# print(result)

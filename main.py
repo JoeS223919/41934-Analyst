@@ -8,6 +8,7 @@ from rules import BeamClassifications
 
 model = ifcopenshell.open("samples/25-16-D-STR.ifc")
 
+
 # windowResult = windowRule.checkRule(model)
 # doorResult = doorRule.checkRule(model)
 # beamResult = beamRule.checkRule(model)
