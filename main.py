@@ -22,4 +22,7 @@ beamClassificationsResult = BeamClassifications.checkRule(model1, 1)
 # print("Door result:", doorResult)
 # print("Beam result:", beamResult)
 print("Beam classifications:", beamClassificationsResult)
-print('length of hasclassification :', len(checkClassificationResult[0]), 'length of no classification:', len(checkClassificationResult[1]))
+print('--------------------------------------------------')
+print('Number of elements with classification: ', len(checkClassificationResult[0]), 
+      'Number of elements without classification: ', len(checkClassificationResult[1]),
+      'Total number of elements: ', len(model1.by_type("IfcElement")))

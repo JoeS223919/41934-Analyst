@@ -12,10 +12,6 @@ def checkRule(model):
             noclassification.append(element)
         else:
             hasclassification.append(element)
-
-    if len(noclassification) == len(elements):
-        return 'No beams have classification'
-    else:
         return hasclassification, noclassification
 
 
