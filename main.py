@@ -5,16 +5,21 @@ from rules import windowRule
 from rules import doorRule
 from rules import beamRule
 from rules import BeamClassifications
+from rules import checkClassification
 
 model = ifcopenshell.open("samples/25-16-D-STR.ifc")
+model1 = ifcopenshell.open("samples/Exercise9_Group10.ifc")
 
 
 # windowResult = windowRule.checkRule(model)
 # doorResult = doorRule.checkRule(model)
 # beamResult = beamRule.checkRule(model)
-beamClassificationsResult = BeamClassifications.checkRule(model, 1)
+checkClassificationResult = checkClassification.checkRule(model1)
+beamClassificationsResult = BeamClassifications.checkRule(model1, 1)
+
 
 # print("Window result:", windowResult)
 # print("Door result:", doorResult)
 # print("Beam result:", beamResult)
 print("Beam classifications:", beamClassificationsResult)
+print('length of hasclassification :', len(checkClassificationResult[0]), 'length of no classification:', len(checkClassificationResult[1]))

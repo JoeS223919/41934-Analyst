@@ -3,7 +3,7 @@ import ifcopenshell.util.classification
 
 
 def checkRule(model):
-    elements = model.by_type("IfcBeam")
+    elements = model.by_type("IfcElement")
     hasclassification = []
     noclassification = []
 
@@ -14,13 +14,10 @@ def checkRule(model):
             hasclassification.append(element)
 
     if len(noclassification) == len(elements):
-        return "No beams have classification"
+        return 'No beams have classification'
     else:
-        return 'the following beams have classification:', hasclassification, 'the following beams have no classification:', noclassification
+        return hasclassification, noclassification
 
 
 
 
-# model = ifcopenshell.open("samples/Exercise9_Group10.ifc")
-# result = checkRule(model)
-# print(result)
