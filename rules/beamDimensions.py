@@ -1,6 +1,6 @@
 import ifcopenshell
 
-ifc_file = ifcopenshell.open("samples/25-16-D-STR.ifc")
+ifc_file = ifcopenshell.open("samples/Exercise9_Group10.ifc")
 beams = ifc_file.by_type("IfcBeam")
 
 
