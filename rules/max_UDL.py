@@ -14,13 +14,13 @@ def checkRule(beam_info):
     # Extract dimensions
     width_mm = beam_info['Dimensions'].get('b')
     height_mm = beam_info['Dimensions'].get('h')
-    length_mm = beam_info['CutLength']
+    length_cm = beam_info['CutLength']
     concrete_strength_mpa = 25 # Example concrete strength in MPa
 
     # Convert mm to meters
     width_m = width_mm / 1000
     height_m = height_mm / 1000
-    length_m = length_mm / 1000
+    length_m = length_cm / 100
 
     # Convert MPa to N/m²
     f_c = concrete_strength_mpa * 10**6
