@@ -56,10 +56,11 @@ def checkRule(ifc_file):
                 width_mm = max(dim1, dim2) * 1000
                 height_mm = min(dim1, dim2) * 1000
 
-            GeoDimensions[beam.GlobalId] = [
+            GeoDimensions[beam.GlobalId] = {
                 "l": round(length_mm, 2),
                 "b": round(width_mm, 2),
-                "h": round(height_mm, 2)]   
+                "h": round(height_mm, 2)
+            }
 
         except Exception as e:
             print(f"Failed to process beam {beam.GlobalId}: {e}")
