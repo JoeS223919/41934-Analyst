@@ -11,6 +11,10 @@ def checkRule(beam_info_dict):
         length_cm = beam_info['CutLength']
         concrete_strength_mpa = 25  # Example concrete strength in MPa
 
+        if not all([width_mm, height_mm, length_cm]):
+            results.append(None)  # Incomplete data
+            continue
+        
         # Convert mm to meters
         width_m = width_mm / 1000
         height_m = height_mm / 1000
