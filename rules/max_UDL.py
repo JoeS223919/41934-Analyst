@@ -4,7 +4,7 @@ import ifcopenshell
 def checkRule(beam_info_dict):
     results = {}
 
-    for global_id, beam_info in beam_info_dict:
+    for beam_info in beam_info_dict:
         # Extract dimensions
         width_mm = beam_info['Dimensions'].get('b')
         height_mm = beam_info['Dimensions'].get('h')
@@ -36,7 +36,7 @@ def checkRule(beam_info_dict):
         max_uniform_load_kn_per_m = max_uniform_load_n_per_m / 1000
 
         # Store result
-        results[global_id] = max_uniform_load_kn_per_m
+        results[beam_info['GlobalId']] = max_uniform_load_kn_per_m
 
 
     return results
