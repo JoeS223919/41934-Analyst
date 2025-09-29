@@ -8,8 +8,11 @@ def checkRule(beam_info_dict):
         # Extract dimensions
         width_mm = beam_info['Dimensions'].get('b')
         height_mm = beam_info['Dimensions'].get('h')
-        length_cm = beam_info['CutLength']
+        length_mm = beam_info['CutLength']
         concrete_strength_mpa = 25  # Example concrete strength in MPa
+
+        if length_mm < 500:
+            continue # Skip beams shorter than 500 mm
 
         if not all([width_mm, height_mm, length_cm]):
             results[beam_info['GlobalId']] = None  # Incomplete data
@@ -18,7 +21,7 @@ def checkRule(beam_info_dict):
         # Convert mm to meters
         width_m = width_mm / 1000
         height_m = height_mm / 1000
-        length_m = length_cm / 1000
+        length_m = length_mm / 1000
 
         # Convert MPa to N/m²
         f_c = concrete_strength_mpa * 10**6
