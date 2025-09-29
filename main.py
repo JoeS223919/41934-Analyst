@@ -33,8 +33,7 @@ DimensionsResult = Dimensions.beam_dimensions(model)
 #       'Number of beams without classification: ', len(checkBeamClassificationResult[1]),
 #       'Total number of beams: ', len(model1.by_type("IfcBeam")))
 
-for beam_info in DimensionsResult:
-    print(f"GlobalId: {beam_info['GlobalId']}, Name: {beam_info['Name']}")
-    print(f"  Dimensions: {beam_info['Dimensions']}")
+for beam_info in DimensionsResult[2]:
+    print(f"  b: {beam_info['Dimensions'].get('b')}")
     print(f"  Cut Length: {beam_info['CutLength']}")
     print()
