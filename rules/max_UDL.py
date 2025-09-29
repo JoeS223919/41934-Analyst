@@ -12,7 +12,7 @@ def checkRule(beam_info_dict):
         concrete_strength_mpa = 25  # Example concrete strength in MPa
 
         if not all([width_mm, height_mm, length_cm]):
-            results.append(None)  # Incomplete data
+            results[beam_info['GlobalId']] = None  # Incomplete data
             continue
 
         # Convert mm to meters
