@@ -2,9 +2,9 @@ import ifcopenshell
 
 
 def checkRule(beam_info_dict):
-    results = []
+    results = {}
 
-    for beam_info in beam_info_dict:
+    for global_id, beam_info in beam_info_dict:
         # Extract dimensions
         width_mm = beam_info['Dimensions'].get('b')
         height_mm = beam_info['Dimensions'].get('h')
@@ -14,7 +14,7 @@ def checkRule(beam_info_dict):
         if not all([width_mm, height_mm, length_cm]):
             results.append(None)  # Incomplete data
             continue
-        
+
         # Convert mm to meters
         width_m = width_mm / 1000
         height_m = height_mm / 1000
@@ -36,6 +36,7 @@ def checkRule(beam_info_dict):
         max_uniform_load_kn_per_m = max_uniform_load_n_per_m / 1000
 
         # Store result
-        results.append(max_uniform_load_kn_per_m)
+        results[global_id] = max_uniform_load_kn_per_m
+
 
     return results
